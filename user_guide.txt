@@ -1,0 +1,8 @@
+
+WsCube Tech
+
+02 How to Install Laravel using Composer in Hindi - Complete Setup | Laravel Tutorial
+
+	composer global require laravel/installer
+ 
+	laravel new laravel_10_first
