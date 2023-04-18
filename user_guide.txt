@@ -6,3 +6,5 @@ WsCube Tech
 	composer global require laravel/installer
  
 	laravel new laravel_10_first
+
+04 Basics of Routing and Routing Files in Laravel | Routing Methods | Laravel Tutorial #4
