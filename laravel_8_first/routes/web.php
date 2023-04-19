@@ -24,11 +24,18 @@ Route::get('/demo2/{name}/{id?}', function ($name,$id = null) {
     echo $id;
 });
 Route::get('/demo3/{name}/{id?}', function ($name,$id = null) {
-    $data = compact('name','id');
+    $html_h2 = '<h2>Demo Off {!! $html_h2 }</h2>';
+    $data = compact('name','id','html_h2');
     return view('demo3')->with($data);
 });
 Route::get('/demo1', function () {
     return view('demo');
+});
+Route::get('/home', function () {
+    return view('home');
+});
+Route::get('/about', function () {
+    return view('about');
 });
 Route::post('/post_demo', function () {
     echo "called when csrf token is present";
