@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SingleActionController;
 use Illuminate\Support\Facades\Route;
@@ -59,3 +60,6 @@ Route::any('/any_demo', function () {
     echo "called when for any post/get";
 });
 Route::resource('resource',ResourceController::class);
+
+Route::get('/register',[RegisterController::class,'index']);
+Route::post('/register',[RegisterController::class,'register']);
