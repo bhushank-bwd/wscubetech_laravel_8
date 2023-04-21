@@ -11,3 +11,10 @@ WsCube Tech
 
 05.What is Blade Template in Laravel and How to Create Layouts in Blade Template_ _ Laravel Tutorial #5
 	loop echo condition break contnue and layout build
+
+06 	What is a Controller in Laravel and How to Create it _ How to Call a Controller from Routes
+
+	php artisan make:controller DemoController
+	php artisan make:controller DemoInvaokableController --invokable
+	php artisan make:controller ResourceController --resource
+	

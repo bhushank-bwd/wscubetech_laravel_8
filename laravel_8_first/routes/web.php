@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\DemoController;
+use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\SingleActionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +26,7 @@ Route::get('/demo2/{name}/{id?}', function ($name,$id = null) {
     echo $name;
     echo $id;
 });
+Route::get('/cDemo',[DemoController::class,'index']);
 Route::get('/demo3/{name}/{id?}', function ($name,$id = null) {
     $html_h2 = '<h2>Demo Off {!! $html_h2 }</h2>';
     $data = compact('name','id','html_h2');
@@ -37,6 +41,8 @@ Route::get('/home', function () {
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/about-us','App\Http\Controllers\DemoController@about');
+Route::get('/invoke',SingleActionController::class);
 Route::post('/post_demo', function () {
     echo "called when csrf token is present";
 });
@@ -52,3 +58,4 @@ Route::delete('/delet_demo', function () {
 Route::any('/any_demo', function () {
     echo "called when for any post/get";
 });
+Route::resource('resource',ResourceController::class);
