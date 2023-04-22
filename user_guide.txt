@@ -17,4 +17,8 @@ WsCube Tech
 	php artisan make:controller DemoController
 	php artisan make:controller DemoInvaokableController --invokable
 	php artisan make:controller ResourceController --resource
+
+07.Submitting Form Data in Laravel l (in Hindi) _ Laravel Tutorial #7
+
+08 How to Add Form Validation in Laravel _ Explained in Hindi _ Laravel Tutorial #8
 	
