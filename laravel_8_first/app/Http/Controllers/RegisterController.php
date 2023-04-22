@@ -9,6 +9,9 @@ class RegisterController extends Controller
     public function index(){
         return view("form");
     }
+    public function component(){
+        return view("component");
+    }
     public function register(Request $req){
 
         $req->validate(
