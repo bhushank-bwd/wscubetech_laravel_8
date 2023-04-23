@@ -29,4 +29,10 @@ WsCube Tech
 10  Database Configuration and Migration in Laravel 8 _ Laravel Tutorial #10
 	php artisan config:cache
 	php artisan migrate
+
+11  How to Create Table using Migration in Laravel_ _ Laravel 8 Tutorial #11
+	php artisan make:migration create_customers_table
+	php artisan migrate:rollback (prevoius migration rollback)
+	php artisan migrate:refresh (delete table and recreated all migration in one batch)
+	php artisan make:migration add_columns_to_customers_table
 	
