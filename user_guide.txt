@@ -41,3 +41,6 @@ WsCube Tech
 	php artisan make:model Product --migration (create migration with model)
 
 	git remote add origin https://github.com/bhushank-bwd/wscubetech_laravel_8.git
+
+Task 1
+	1) Create migration for column modification like create time should currenttime and updated_at add attribute like update time stamp on update query 
