@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SingleActionController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Customer;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +65,12 @@ Route::resource('resource',ResourceController::class);
 Route::get('/register',[RegisterController::class,'index']);
 Route::get('/component',[RegisterController::class,'component']);
 Route::post('/register',[RegisterController::class,'register']);
+
+Route::get('/customers',function(){
+    $customers = Customer::all();
+    echo "<pre>";
+    // print_r($customers);
+    print_r($customers->toArray());
+    echo "<br>";
+    echo "</pre>";
+});
