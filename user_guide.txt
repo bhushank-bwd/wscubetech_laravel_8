@@ -25,4 +25,8 @@ WsCube Tech
 09 How to use Components in Laravel _ Feature of Components _ Laravel Tutorial #9
 
 	php artisan make:component FormInput
+
+10  Database Configuration and Migration in Laravel 8 _ Laravel Tutorial #10
+	php artisan config:cache
+	php artisan migrate
 	
