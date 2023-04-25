@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Customer;
 class RegisterController extends Controller
 {
     public function index(){
@@ -23,8 +23,13 @@ class RegisterController extends Controller
             ]   
             );
 
+        $customer = new Customer;
+        $customer->name = $req['name'];
+        $customer->email = $req['email'];
+        $customer->password = md5($req['email']);
+        $customer->save();
         echo'<pre>';
-        print_r($req->all());
+        print_r($customer->id);
         die;
         
     }
