@@ -63,6 +63,7 @@ Route::any('/any_demo', function () {
 Route::resource('resource',ResourceController::class);
 
 Route::get('/register',[RegisterController::class,'index']);
+Route::get('/customer/view',[RegisterController::class,'view']);
 Route::get('/component',[RegisterController::class,'component']);
 Route::post('/register',[RegisterController::class,'register']);
 

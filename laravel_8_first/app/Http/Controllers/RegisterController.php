@@ -26,11 +26,18 @@ class RegisterController extends Controller
         $customer = new Customer;
         $customer->name = $req['name'];
         $customer->email = $req['email'];
+        $customer->address = $req['address'];
         $customer->password = md5($req['email']);
         $customer->save();
-        echo'<pre>';
-        print_r($customer->id);
-        die;
+        // echo'<pre>';
+        // print_r($customer->id);
+        // die;
+        return redirect('customer/view');
         
+    }
+    public function view(){
+        $customers = Customer::all();
+        $data = compact('customers');
+        return view('customer-view')->with($data);
     }
 }
