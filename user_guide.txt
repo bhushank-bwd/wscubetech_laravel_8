@@ -44,3 +44,13 @@ WsCube Tech
 
 Task 1
 	1) Create migration for column modification like create time should currenttime and updated_at add attribute like update time stamp on update query 
+
+15) Routing Through Buttons and Anchor Tags
+	2 Ways
+
+	a) {{ url('/') }}, {{ url('/register') }} always hit get routes
+
+	b) route => Route::get('/register',[RegisterController::class,'index'])->name('user.register');
+		call  route('user.register')
+		beneficier than url
+
