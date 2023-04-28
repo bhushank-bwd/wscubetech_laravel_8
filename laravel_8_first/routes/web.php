@@ -64,6 +64,7 @@ Route::resource('resource',ResourceController::class);
 
 Route::get('/register',[RegisterController::class,'index']);
 Route::get('/customer/view',[RegisterController::class,'view']);
+Route::get('/customer/delete/{id}',[RegisterController::class,'delete'])->name('customer.delete');
 Route::get('/component',[RegisterController::class,'component']);
 Route::post('/register',[RegisterController::class,'register']);
 
