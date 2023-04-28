@@ -47,4 +47,12 @@ class RegisterController extends Controller
         }
         return redirect('customer/view');
     }
+    public function update($id){   // add Request $req if it is from form/view
+        $customer = Customer::find($id);
+        if($customer){
+            $customer->address = "Address ".date('Ymdhisa')."-".rand(); // use $req->address if it is from form/view
+            $customer->save();
+        }
+        return redirect('customer/view');
+    }
 }
