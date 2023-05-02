@@ -19,6 +19,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Address</th>
+                    <th>Created_at</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -33,6 +34,7 @@
                     <td>{{ $customer->name }}</td>
                     <td>{{ $customer->email }}</td>
                     <td>{{ $customer->address }}</td>
+                    <td>{{ $customer->created_at }}</td>
                     {{-- <td><a href="{{url('customer/delete')."/".$customer->id}}"><button class="btn btn-danger">Delete</button></a></td> alternative --}}
                     <td><a href="{{route('customer.delete',['id'=>$customer->id])}}"><button class="btn btn-danger">Delete</button></a></td>
                 </tr>
