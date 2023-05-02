@@ -6,6 +6,7 @@ use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SingleActionController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Customer;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,4 +78,20 @@ Route::get('/customers',function(){
     print_r($customers->toArray());
     echo "<br>";
     echo "</pre>";
+});
+Route::get('/get-sessions',function(){
+    $session = session()->all();
+    ep($session);
+});
+Route::get('/set-sessions',function(Request $req){
+    $req->session()->put('user_id',12);
+    $req->session()->put('user_name',"John");
+    $req->session()->flash('status',true);
+    return Redirect('get-sessions');
+});
+Route::get('/destroy-sessions',function(Request $req){
+    // $req->session()->forget('user_id');
+    $req->session()->forget(['user_id','user_name']);
+    
+    return Redirect('get-sessions');
 });
