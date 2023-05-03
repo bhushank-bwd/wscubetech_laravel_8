@@ -58,3 +58,7 @@ Task 1
 
 21) 21.Soft Delete in Laravel 8 (Move to Trash)
 	php artisan make:migration add_deleted_at_to_customers_table 
+
+22)  Converting an HTML Template into Laravel Project _ Explained in Hindi _ Laravel 8 Tutorial #22
+
+	refer commit 44da3811084d0e944bd54596a9bc4ae96330123d ()
