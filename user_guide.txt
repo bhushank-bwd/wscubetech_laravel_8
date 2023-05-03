@@ -54,5 +54,7 @@ Task 1
 		call  route('user.register')
 		beneficier than url
 18)  How to Create Custom Helper in Laravel 8_ _ Helper Function _ Laravel 8 Tutorial #18
-
 	composer dump-autoload
+
+21) 21.Soft Delete in Laravel 8 (Move to Trash)
+	php artisan make:migration add_deleted_at_to_customers_table 

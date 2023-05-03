@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="container">
-        <a href="{{url('customer/trash')}}" class="btn btn-primary">Trash</a>
+        <a href="{{url('customer/view')}}" class="btn btn-primary">View</a>
         <table class="table">
             <thead>
                 <tr>
@@ -37,7 +37,7 @@
                     <td>{{ $customer->address }}</td>
                     <td>{{ $customer->created_at }}</td>
                     {{-- <td><a href="{{url('customer/delete')."/".$customer->id}}"><button class="btn btn-danger">Delete</button></a></td> alternative --}}
-                    <td><a href="{{route('customer.delete',['id'=>$customer->id])}}"><button class="btn btn-danger">Trash</button></a></td>
+                    <td><a href="{{route('customer.force_delete',['id'=>$customer->id])}}"><button class="btn btn-danger">Delete</button></a>&nbsp;<a href="{{route('customer.restore',['id'=>$customer->id])}}"><button class="btn btn-info">Restore</button></a></td>
                 </tr>
                 @endforeach
             </tbody>

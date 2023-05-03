@@ -40,10 +40,30 @@ class RegisterController extends Controller
         $data = compact('customers');
         return view('customer-view')->with($data);
     }
+    public function trash(){
+        $customers = Customer::onlyTrashed()->get();
+        $data = compact('customers');
+        return view('customer-trash')->with($data);
+    }
     public function delete($id){
         $customer = Customer::find($id);
         if($customer){
             $customer->delete();
+        }
+        return redirect('customer/view');
+    }
+    
+    public function restore($id){
+        $customer = Customer::withTrashed()->find($id);
+        if($customer){
+            $customer->restore();
+        }
+        return redirect('customer/view');
+    }
+    public function forceDelete($id){
+        $customer = Customer::withTrashed()->find($id);
+        if($customer){
+            $customer->forceDelete();
         }
         return redirect('customer/view');
     }

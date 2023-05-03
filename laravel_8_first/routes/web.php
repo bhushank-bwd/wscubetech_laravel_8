@@ -65,7 +65,10 @@ Route::resource('resource',ResourceController::class);
 
 Route::get('/register',[RegisterController::class,'index']);
 Route::get('/customer/view',[RegisterController::class,'view']);
+Route::get('/customer/trash',[RegisterController::class,'trash']);
 Route::get('/customer/delete/{id}',[RegisterController::class,'delete'])->name('customer.delete');
+Route::get('/customer/force_delete/{id}',[RegisterController::class,'forceDelete'])->name('customer.force_delete');
+Route::get('/customer/restore/{id}',[RegisterController::class,'restore'])->name('customer.restore');
 Route::get('/customer/edit/{id}',[RegisterController::class,'edit'])->name('customer.edit'); // for form/view
 Route::get('/customer/update/{id}',[RegisterController::class,'update'])->name('customer.update'); // for action
 Route::get('/component',[RegisterController::class,'component']);
