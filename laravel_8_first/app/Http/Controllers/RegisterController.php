@@ -76,4 +76,10 @@ class RegisterController extends Controller
         }
         return redirect('customer/view');
     }
+    public function collective(){
+        return view('collective');
+    }
+    public function saveContact(Request $request){
+        ep($request->all(),false);
+    }
 }

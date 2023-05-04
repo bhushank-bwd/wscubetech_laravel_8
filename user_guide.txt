@@ -62,3 +62,7 @@ Task 1
 22)  Converting an HTML Template into Laravel Project _ Explained in Hindi _ Laravel 8 Tutorial #22
 
 	refer commit 44da3811084d0e944bd54596a9bc4ae96330123d (05.What is Blade Template in Laravel and How to Create Layouts in Blade Template Laravel Tutorial) and build 5/n pages website using yield layout section etc
+
+23)  Laravel Collective Html Form Package and Installation
+	composer require laravelcollective/html
+	https://laravelcollective.com/docs/6.x/html

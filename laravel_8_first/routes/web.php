@@ -72,7 +72,9 @@ Route::get('/customer/restore/{id}',[RegisterController::class,'restore'])->name
 Route::get('/customer/edit/{id}',[RegisterController::class,'edit'])->name('customer.edit'); // for form/view
 Route::get('/customer/update/{id}',[RegisterController::class,'update'])->name('customer.update'); // for action
 Route::get('/component',[RegisterController::class,'component']);
+Route::get('/collective',[RegisterController::class,'collective']);
 Route::post('/register',[RegisterController::class,'register']);
+Route::post('/saveContact',[RegisterController::class,'saveContact']);
 
 Route::get('/customers',function(){
     $customers = Customer::all();
