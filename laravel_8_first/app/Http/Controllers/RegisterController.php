@@ -80,6 +80,10 @@ class RegisterController extends Controller
         return view('collective');
     }
     public function saveContact(Request $request){
-        ep($request->all(),false);
+        // ep($request->all(),false);
+        $name = time()."-ws-.".$request->file('avtar')->getClientOriginalExtension();
+        echo $request->file('avtar')->store('uploads');
+        echo "<br>";
+        echo $request->file('avtar')->storeAs('uploads',$name);
     }
 }

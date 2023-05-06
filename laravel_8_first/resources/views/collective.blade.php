@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="container m-2">
-        {!! Form::open(['url' => 'saveContact']) !!}
+        {!! Form::open(['url' => 'saveContact','enctype'=>'multipart/form-data']) !!}
         @php
             echo Form::email("email_id", $value = null, $attributes = ['class'=>'form-control']);
             echo Form::file("avtar", $attributes = ['class'=>'form-control']);
