@@ -66,3 +66,10 @@ Task 1
 23)  Laravel Collective Html Form Package and Installation
 	composer require laravelcollective/html
 	https://laravelcollective.com/docs/6.x/html
+
+24) File Uploading using Laravel
+
+25) Database Seeder and Faker
+
+	php artisan make:seeder CustomerSeeder
+	php artisan db:seed
