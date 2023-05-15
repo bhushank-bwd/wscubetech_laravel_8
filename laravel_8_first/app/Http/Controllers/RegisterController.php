@@ -40,6 +40,11 @@ class RegisterController extends Controller
         $data = compact('customers');
         return view('customer-view')->with($data);
     }
+    public function search($search){
+        $customers = Customer::where("name",'LIKE',"%$search%")->orWhere("email",'LIKE',"%$search%")->get();
+        $data = compact('customers');
+        return view('customer-view')->with($data);
+    }
     public function trash(){
         $customers = Customer::onlyTrashed()->get();
         $data = compact('customers');

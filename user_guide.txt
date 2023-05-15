@@ -73,3 +73,5 @@ Task 1
 
 	php artisan make:seeder CustomerSeeder
 	php artisan db:seed
+
+26) Search Function in Laravel Implement Search Function

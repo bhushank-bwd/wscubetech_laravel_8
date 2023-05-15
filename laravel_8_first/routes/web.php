@@ -75,6 +75,7 @@ Route::get('/component',[RegisterController::class,'component']);
 Route::get('/collective',[RegisterController::class,'collective']);
 Route::post('/register',[RegisterController::class,'register']);
 Route::post('/saveContact',[RegisterController::class,'saveContact']);
+Route::get('/search/{search}',[RegisterController::class,'search']);
 
 Route::get('/customers',function(){
     $customers = Customer::all();
