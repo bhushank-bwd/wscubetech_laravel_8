@@ -25,14 +25,14 @@ Route::get('/', function () {
 Route::get('/demo', function () {
     echo "demo";
 });
-Route::get('/demo2/{name}/{id?}', function ($name,$id = null) {
+Route::get('/demo2/{name}/{id?}', function ($name, $id = null) {
     echo $name;
     echo $id;
 });
-Route::get('/cDemo',[DemoController::class,'index']);
-Route::get('/demo3/{name}/{id?}', function ($name,$id = null) {
+Route::get('/cDemo', [DemoController::class, 'index']);
+Route::get('/demo3/{name}/{id?}', function ($name, $id = null) {
     $html_h2 = '<h2>Demo Off {!! $html_h2 }</h2>';
-    $data = compact('name','id','html_h2');
+    $data = compact('name', 'id', 'html_h2');
     return view('demo3')->with($data);
 });
 Route::get('/demo1', function () {
@@ -44,8 +44,8 @@ Route::get('/home', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/about-us','App\Http\Controllers\DemoController@about');
-Route::get('/invoke',SingleActionController::class);
+Route::get('/about-us', 'App\Http\Controllers\DemoController@about');
+Route::get('/invoke', SingleActionController::class);
 Route::post('/post_demo', function () {
     echo "called when csrf token is present";
 });
@@ -61,23 +61,25 @@ Route::delete('/delet_demo', function () {
 Route::any('/any_demo', function () {
     echo "called when for any post/get";
 });
-Route::resource('resource',ResourceController::class);
+Route::resource('resource', ResourceController::class);
 
-Route::get('/register',[RegisterController::class,'index']);
-Route::get('/customer/view',[RegisterController::class,'view']);
-Route::get('/customer/trash',[RegisterController::class,'trash']);
-Route::get('/customer/delete/{id}',[RegisterController::class,'delete'])->name('customer.delete');
-Route::get('/customer/force_delete/{id}',[RegisterController::class,'forceDelete'])->name('customer.force_delete');
-Route::get('/customer/restore/{id}',[RegisterController::class,'restore'])->name('customer.restore');
-Route::get('/customer/edit/{id}',[RegisterController::class,'edit'])->name('customer.edit'); // for form/view
-Route::get('/customer/update/{id}',[RegisterController::class,'update'])->name('customer.update'); // for action
-Route::get('/component',[RegisterController::class,'component']);
-Route::get('/collective',[RegisterController::class,'collective']);
-Route::post('/register',[RegisterController::class,'register']);
-Route::post('/saveContact',[RegisterController::class,'saveContact']);
-Route::get('/search/{search}',[RegisterController::class,'search']);
+Route::get('/register', [RegisterController::class, 'index']);
+Route::group(['prefix' => '/customer'], function () {
+    Route::get('view', [RegisterController::class, 'view']);
+    Route::get('trash', [RegisterController::class, 'trash']);
+    Route::get('delete/{id}', [RegisterController::class, 'delete'])->name('customer.delete');
+    Route::get('force_delete/{id}', [RegisterController::class, 'forceDelete'])->name('customer.force_delete');
+    Route::get('restore/{id}', [RegisterController::class, 'restore'])->name('customer.restore');
+    Route::get('edit/{id}', [RegisterController::class, 'edit'])->name('customer.edit'); // for form/view
+    Route::get('update/{id}', [RegisterController::class, 'update'])->name('customer.update'); // for action
+});
+Route::get('/component', [RegisterController::class, 'component']);
+Route::get('/collective', [RegisterController::class, 'collective']);
+Route::post('/register', [RegisterController::class, 'register']);
+Route::post('/saveContact', [RegisterController::class, 'saveContact']);
+Route::get('/search/{search}', [RegisterController::class, 'search']);
 
-Route::get('/customers',function(){
+Route::get('/customers', function () {
     $customers = Customer::all();
     echo "<pre>";
     // print_r($customers);
@@ -85,19 +87,19 @@ Route::get('/customers',function(){
     echo "<br>";
     echo "</pre>";
 });
-Route::get('/get-sessions',function(){
+Route::get('/get-sessions', function () {
     $session = session()->all();
     ep($session);
 });
-Route::get('/set-sessions',function(Request $req){
-    $req->session()->put('user_id',12);
-    $req->session()->put('user_name',"John");
-    $req->session()->flash('status',true);
+Route::get('/set-sessions', function (Request $req) {
+    $req->session()->put('user_id', 12);
+    $req->session()->put('user_name', "John");
+    $req->session()->flash('status', true);
     return Redirect('get-sessions');
 });
-Route::get('/destroy-sessions',function(Request $req){
+Route::get('/destroy-sessions', function (Request $req) {
     // $req->session()->forget('user_id');
-    $req->session()->forget(['user_id','user_name']);
-    
+    $req->session()->forget(['user_id', 'user_name']);
+
     return Redirect('get-sessions');
 });
