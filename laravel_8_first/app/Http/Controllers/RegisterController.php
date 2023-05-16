@@ -36,12 +36,12 @@ class RegisterController extends Controller
         
     }
     public function view(){
-        $customers = Customer::all();
+        $customers = Customer::paginate(15);
         $data = compact('customers');
         return view('customer-view')->with($data);
     }
     public function search($search){
-        $customers = Customer::where("name",'LIKE',"%$search%")->orWhere("email",'LIKE',"%$search%")->get();
+        $customers = Customer::where("name",'LIKE',"%$search%")->orWhere("email",'LIKE',"%$search%")->paginate(4);
         $data = compact('customers');
         return view('customer-view')->with($data);
     }

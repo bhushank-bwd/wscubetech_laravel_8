@@ -42,6 +42,11 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="row">
+            @php
+                echo $customers->links()
+            @endphp
+            </div>
     </div>
 
 
