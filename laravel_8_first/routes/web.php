@@ -19,7 +19,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
+Route::get('/{lang?}', function ($lang = 'en') {
+    App::setLocale($lang);
     return view('welcome');
 });
 Route::get('/demo', function () {
