@@ -77,5 +77,6 @@ Task 1
 26) Search Function in Laravel Implement Search Function
 
 30) Laravel Stub
+	// it is just like snippet that execute on artisan command
 	php artisan stub:publish // generates/show stub list
 	php artisan make:controller StubDemoController // make changes laravel_8_first\stubs\controller.plain.stub and execute it command
