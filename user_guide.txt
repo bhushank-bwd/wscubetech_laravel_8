@@ -80,3 +80,7 @@ Task 1
 	// it is just like snippet that execute on artisan command
 	php artisan stub:publish // generates/show stub list
 	php artisan make:controller StubDemoController // make changes laravel_8_first\stubs\controller.plain.stub and execute it command
+
+31) Defining Foreign Key Relationship using Laravel migration
+		=> create two table groups and members by migration
+		=> group.id = foreign key for members.group_id
