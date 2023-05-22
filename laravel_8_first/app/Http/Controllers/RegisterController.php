@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Group;
 use App\Models\Member;
 use Illuminate\Http\Request;
 use App\Models\Customer;
@@ -94,5 +95,11 @@ class RegisterController extends Controller
     }
     public function oneToOne(){
         return Member::with('getGroup')->get();
+    }
+    public function oneToMany(){
+        return Member::with('getManyGroups')->get();
+    }
+    public function groupMemebers(){
+        return Group::with('getManyMembers')->get();
     }
 }

@@ -80,6 +80,8 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/saveContact', [RegisterController::class, 'saveContact']);
 Route::get('/search/{search}', [RegisterController::class, 'search']);
 Route::get('/onetoone', [RegisterController::class, 'oneToOne']);
+Route::get('/onetomany', [RegisterController::class, 'oneToMany']);
+Route::get('/groupMemebers', [RegisterController::class, 'groupMemebers']);
 
 Route::get('/customers', function () {
     $customers = Customer::all();

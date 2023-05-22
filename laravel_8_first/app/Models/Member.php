@@ -13,4 +13,7 @@ class Member extends Model
     function getGroup(){
         return $this->hasOne(Group::class,'group_id');
     }
+    function getManyGroups(){
+        return $this->hasMany(Group::class,'group_id','group_id');
+    }
 }
