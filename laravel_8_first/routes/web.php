@@ -19,10 +19,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/{lang?}', function ($lang = 'en') {
-    App::setLocale($lang);
-    return view('welcome');
-});
+// Route::get('/{lang?}', function ($lang = 'en') {
+//     App::setLocale($lang);
+//     return view('welcome');
+// });
 Route::get('/demo', function () {
     echo "demo";
 });
@@ -79,6 +79,7 @@ Route::get('/collective', [RegisterController::class, 'collective']);
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/saveContact', [RegisterController::class, 'saveContact']);
 Route::get('/search/{search}', [RegisterController::class, 'search']);
+Route::get('/onetoone', [RegisterController::class, 'oneToOne']);
 
 Route::get('/customers', function () {
     $customers = Customer::all();

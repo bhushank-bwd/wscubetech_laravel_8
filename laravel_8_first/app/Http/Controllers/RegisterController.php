@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Member;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 class RegisterController extends Controller
@@ -90,5 +91,8 @@ class RegisterController extends Controller
         echo $request->file('avtar')->store('uploads');
         echo "<br>";
         echo $request->file('avtar')->storeAs('uploads',$name);
+    }
+    public function oneToOne(){
+        return Member::with('getGroup')->get();
     }
 }

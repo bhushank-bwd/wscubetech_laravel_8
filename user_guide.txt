@@ -84,3 +84,11 @@ Task 1
 31) Defining Foreign Key Relationship using Laravel migration
 		=> create two table groups and members by migration
 		=> group.id = foreign key for members.group_id
+
+32) Laravel One to One Eloquent Relationship
+		create two model Group and Memebr
+
+		Member 1=> has group 1
+		Member 2=> has group 2 means one to one relation
+
+	[{"member_id":1,"name":"ascasdasd","email":"asdasdasd","group_id":1,"created_at":null,"updated_at":null,"get_group":{"group_id":1,"group_name":"Name","info":"sdklhaskudghaskjhfkaesf","created_at":null,"updated_at":null}},{"member_id":2,"name":"ascasdasd","email":"esfdrtawerewrfewrfew","group_id":2,"created_at":null,"updated_at":null,"get_group":{"group_id":2,"group_name":"Name 2","info":"desc 2","created_at":null,"updated_at":null}}]
