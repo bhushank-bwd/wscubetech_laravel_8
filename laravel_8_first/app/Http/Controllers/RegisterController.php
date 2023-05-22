@@ -102,4 +102,7 @@ class RegisterController extends Controller
     public function groupMemebers(){
         return Group::with('getManyMembers')->get();
     }
+    public function customerDetails(Customer $customer){
+        return $customer;
+    }
 }

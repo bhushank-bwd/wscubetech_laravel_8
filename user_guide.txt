@@ -95,3 +95,11 @@ Task 1
 
 37) Custom artisan command 
 	php artisan make:command GetDBName
+
+38) route model binding
+
+	Route::get('/customer/{customer}', [RegisterController::class, 'customerDetails']); 
+	public function customerDetails(Customer $customer){
+        return $customer;
+    }
+	{customer} and $customer should match

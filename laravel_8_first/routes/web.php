@@ -82,6 +82,7 @@ Route::get('/search/{search}', [RegisterController::class, 'search']);
 Route::get('/onetoone', [RegisterController::class, 'oneToOne']);
 Route::get('/onetomany', [RegisterController::class, 'oneToMany']);
 Route::get('/groupMemebers', [RegisterController::class, 'groupMemebers']);
+Route::get('/customer/{customer}', [RegisterController::class, 'customerDetails']);
 
 Route::get('/customers', function () {
     $customers = Customer::all();
