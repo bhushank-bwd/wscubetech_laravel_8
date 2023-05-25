@@ -103,3 +103,7 @@ Task 1
         return $customer;
     }
 	{customer} and $customer should match
+
+34) Middleware => Global, Route & Groups Middleware
+		php artisan make:middleware Webgurad
+		http://127.0.0.1:8000/customer/view?age=18 for any route
