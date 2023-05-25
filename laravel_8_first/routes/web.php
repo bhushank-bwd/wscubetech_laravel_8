@@ -62,11 +62,23 @@ Route::delete('/delet_demo', function () {
 Route::any('/any_demo', function () {
     echo "called when for any post/get";
 });
+Route::any('/page-denied', function () {
+    echo "you don't have access to it";
+});
+Route::any('/mw-login', function (Request $req) {
+    $req->session()->flash('user_id', 1);
+    return Redirect('/');
+});
+
+Route::any('/mw-logout', function (Request $req) {
+    $req->session()->forget('user_id');
+    return Redirect('/');
+});
 Route::resource('resource', ResourceController::class);
 
 Route::get('/register', [RegisterController::class, 'index']);
 Route::group(['prefix' => '/customer'], function () {
-    Route::get('view', [RegisterController::class, 'view']);
+    Route::get('view', [RegisterController::class, 'view'])->middleware('logincheck');
     Route::get('trash', [RegisterController::class, 'trash']);
     Route::get('delete/{id}', [RegisterController::class, 'delete'])->name('customer.delete');
     Route::get('force_delete/{id}', [RegisterController::class, 'forceDelete'])->name('customer.force_delete');
